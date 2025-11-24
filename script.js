@@ -1,8 +1,529 @@
 const verticals = [
   {
+    id: "enterpriseMDM",
+    name: "Enterprise MDM Leadership",
+    description:
+      "Cross-industry leaders stewarding ERP transformations, data governance, and master-data excellence.",
+    personas: [
+      {
+        id: "vpDataManagement",
+        name: "VP / Director of Data Management",
+        personaName: "Evelyn Shore",
+        company: "Global Industries Group",
+        role: "Sets the data strategy and ensures master data fuels analytics and operations.",
+        shortDescription:
+          "Wants measurable data quality improvements that keep programs funded and aligned to business KPIs.",
+        focusAreas: [
+          "Data quality KPIs tied to business outcomes",
+          "Stewardship model across business units",
+          "Funding and sequencing of data initiatives",
+        ],
+        redPath:
+          "Anchor on the cost of bad data, agree on KPIs CODA will move, and propose a pilot that proves value inside one quarter.",
+        questions: [
+          {
+            id: "dm-lead-1",
+            text: "How do you currently measure the impact of poor master data on revenue, cost, or risk?",
+            options: [
+              "We track hard KPIs for duplicates, on-time maintenance, and sourcing cycle times.",
+              "We have anecdotal evidence but no consistent metrics yet.",
+              "We assume the impact is minimal and focus on other priorities.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "Great—CODA can feed those KPIs with governed data so improvements are undeniable.",
+              weak: "Anecdotes are a starting point. CODA can baseline quality and quantify leakage fast.",
+              bad: "Assuming minimal impact hides risk. Use CODA to reveal tangible cost and speed wins.",
+            },
+          },
+          {
+            id: "dm-lead-2",
+            text: "Who owns stewardship for critical domains like materials, vendors, and assets?",
+            options: [
+              "We have clear business stewards with SLAs and approvals in place.",
+              "Ownership exists but is informal and varies by region.",
+              "No defined owners; IT fixes issues when users complain.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA codifies those SLAs and keeps approvals auditable across domains.",
+              weak: "Informal ownership drifts. CODA standardizes roles and provides evidence of compliance.",
+              bad: "No ownership fuels chaos. Position CODA as the governance backbone without heavy lift.",
+            },
+          },
+          {
+            id: "dm-lead-3",
+            text: "How do you prioritize which master-data issues to tackle first?",
+            options: [
+              "Based on quantified business impact and executive sponsors.",
+              "Whoever shouts loudest or whichever project is live.",
+              "We wait until audits or outages force the issue.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA supplies the impact data and playbooks to keep that prioritization disciplined.",
+              weak: "Noise-driven work wastes effort. CODA highlights where fixes unlock cash or reliability fastest.",
+              bad: "Reactive fixes are costly. Use CODA to move to a proactive, value-ranked roadmap.",
+            },
+          },
+        ],
+      },
+      {
+        id: "vpDataGovernance",
+        name: "VP / Director of Data Governance",
+        personaName: "Marcus Leighton",
+        company: "Global Industries Group",
+        role: "Owns policies, controls, and adoption for master-data governance.",
+        shortDescription:
+          "Needs auditable governance that business teams actually follow without slowing delivery.",
+        focusAreas: [
+          "Policy adoption with minimal friction",
+          "Audit-ready approvals and lineage",
+          "Change management across regions",
+        ],
+        redPath:
+          "Show how CODA automates policy enforcement, captures evidence for audits, and reduces manual policing.",
+        questions: [
+          {
+            id: "dg-lead-1",
+            text: "What evidence do you provide during audits to prove master-data policies are followed?",
+            options: [
+              "Automated approval trails with clear ownership per domain.",
+              "Screenshots and spreadsheets compiled before the audit.",
+              "We rely on verbal walkthroughs with auditors.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA keeps those trails complete and exportable so audits are predictable.",
+              weak: "Manual prep is fragile. CODA centralizes evidence and reduces scramble time.",
+              bad: "Walkthroughs invite findings. CODA provides defensible, system-based proof.",
+            },
+          },
+          {
+            id: "dg-lead-2",
+            text: "How do you balance governance controls with project speed?",
+            options: [
+              "Controls are embedded in workflows so teams stay fast and compliant.",
+              "We add controls late in projects to avoid slowing delivery.",
+              "Teams bypass controls when deadlines are tight.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "Embedding controls is ideal. CODA enforces standards inline without extra steps.",
+              weak: "Late controls create rework. CODA bakes governance in from intake to approval.",
+              bad: "Bypasses erode trust. CODA gives a fast path that teams will actually use.",
+            },
+          },
+          {
+            id: "dg-lead-3",
+            text: "How do you keep business stewards engaged after go-live?",
+            options: [
+              "We share KPIs and feedback loops showing their impact.",
+              "We meet quarterly when issues surface.",
+              "Engagement fades once the project ends.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA surfaces KPI wins and exceptions so stewards stay involved.",
+              weak: "Quarterly touchpoints miss drift. CODA provides continuous signals to keep alignment.",
+              bad: "Drop-off leads to decay. CODA makes stewardship lightweight and visible.",
+            },
+          },
+        ],
+      },
+      {
+        id: "mdmLead",
+        name: "Head of Master Data / MDM Lead",
+        personaName: "Isabel Trujillo",
+        company: "Global Industries Group",
+        role: "Runs the master-data team, tooling, and standards across ERPs and domains.",
+        shortDescription:
+          "Needs a reliable way to prevent duplicates, speed approvals, and keep catalogs harmonized across systems.",
+        focusAreas: [
+          "Duplicate prevention and remediation",
+          "Workflow efficiency for data creation",
+          "Cross-system synchronization",
+        ],
+        redPath:
+          "Quantify duplicate rates, show CODA's prevention workflow, and propose a pilot for SAP and Maximo together.",
+        questions: [
+          {
+            id: "mdm-lead-1",
+            text: "How do you stop duplicate materials or vendors from entering SAP, S/4, or Maximo today?",
+            options: [
+              "Automated checks with clear exception handling before creation.",
+              "Periodic cleanups and steward reviews after records go live.",
+              "We rely on users to notice issues during transactions.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA augments those checks with stronger matching and faster exception routing.",
+              weak: "Cleanups leave leakage. CODA prevents and remediates in one flow.",
+              bad: "User reliance risks hidden cost. CODA makes prevention the default.",
+            },
+          },
+          {
+            id: "mdm-lead-2",
+            text: "What is the cycle time from request to approved master data?",
+            options: [
+              "We track and meet SLAs consistently across regions.",
+              "Cycle time varies; we expedite critical requests manually.",
+              "We do not track it closely and approvals can linger.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA keeps SLAs visible and automates routing to keep cycle times predictable.",
+              weak: "Manual expediting drains capacity. CODA standardizes priority handling.",
+              bad: "Untracked delays hurt trust. CODA provides visibility and speed.",
+            },
+          },
+          {
+            id: "mdm-lead-3",
+            text: "How do you keep attributes consistent when the same item exists in multiple ERPs?",
+            options: [
+              "We synchronize through a governed hub with validations and lineage.",
+              "We reconcile periodically using spreadsheets.",
+              "We assume systems stay aligned unless someone flags an issue.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA strengthens that hub and surfaces drift automatically.",
+              weak: "Spreadsheets miss nuance. CODA maintains alignment continuously.",
+              bad: "Assumptions allow drift. CODA keeps catalogs harmonized without manual effort.",
+            },
+          },
+        ],
+      },
+      {
+        id: "erpTransformation",
+        name: "IT / ERP Transformation Lead (SAP S/4, Oracle, Maximo)",
+        personaName: "Dev Patel",
+        company: "Global Industries Group",
+        role: "Leads ERP modernization and integration programs across regions.",
+        shortDescription:
+          "Needs clean, standardized masters so cutovers, integrations, and migrations land without disruption.",
+        focusAreas: [
+          "Data readiness for cutover",
+          "Integration standards across legacy and target systems",
+          "Risk mitigation during rollout",
+        ],
+        redPath:
+          "Tie master-data quality to cutover risk, then position CODA to cleanse, govern, and monitor during S/4 or Maximo waves.",
+        questions: [
+          {
+            id: "erp-trans-1",
+            text: "What data quality gates do you enforce before migrating to S/4 or Oracle Cloud?",
+            options: [
+              "Automated profiling and deduplication with clear go/no-go criteria.",
+              "Sample-based reviews when timelines allow.",
+              "We focus on configuration and migrate data as-is.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA accelerates those gates with stronger matching and cleansing at scale.",
+              weak: "Sampling leaves risk. CODA provides full visibility without slowing timelines.",
+              bad: "As-is migration invites rework. CODA reduces cutover risk upfront.",
+            },
+          },
+          {
+            id: "erp-trans-2",
+            text: "How do you keep material and vendor standards consistent across legacy systems during a phased rollout?",
+            options: [
+              "A central governance hub enforces standards across all waves.",
+              "We issue templates and hope sites follow them.",
+              "We clean each site right before it migrates.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA operates as that hub, preventing drift between waves.",
+              weak: "Templates alone drift. CODA validates data before it hits the queue.",
+              bad: "Just-in-time cleanup is risky. CODA maintains readiness continuously.",
+            },
+          },
+          {
+            id: "erp-trans-3",
+            text: "What evidence do you show executives that data risk is under control for the next release?",
+            options: [
+              "Trend KPIs for duplicates, completeness, and approval adherence.",
+              "Point-in-time reports before cutover.",
+              "We report schedule status without detailed data metrics.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA keeps those KPIs live so leaders see risk burn down.",
+              weak: "Point-in-time reports miss drift. CODA provides continuous readiness signals.",
+              bad: "Schedule-only updates hide risk. CODA makes data health visible alongside timeline.",
+            },
+          },
+        ],
+      },
+      {
+        id: "enterpriseArchitecture",
+        name: "Enterprise Architecture Leader",
+        personaName: "Chen Wu",
+        company: "Global Industries Group",
+        role: "Owns standards and integration patterns across the application landscape.",
+        shortDescription:
+          "Needs a sustainable way to keep reference architectures clean and data flows consistent as systems evolve.",
+        focusAreas: [
+          "Authoritative sources of truth per domain",
+          "Integration patterns that prevent data drift",
+          "Roadmaps aligned to business capabilities",
+        ],
+        redPath:
+          "Position CODA as the controlled MDM layer that enforces standards, reduces integration sprawl, and supports capability roadmaps.",
+        questions: [
+          {
+            id: "ea-lead-1",
+            text: "How do you decide which system is the source of truth for materials, vendors, and assets?",
+            options: [
+              "We maintain a reference architecture with clear ownership and enforcement.",
+              "We have guidance, but projects sometimes pick their own sources.",
+              "It varies by project with no central decision.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA enforces that ownership and keeps downstream systems aligned.",
+              weak: "Guidance without enforcement drifts. CODA provides the control point.",
+              bad: "Ad-hoc sources create chaos. CODA creates a single, governed baseline.",
+            },
+          },
+          {
+            id: "ea-lead-2",
+            text: "What guardrails prevent integrations from reintroducing duplicates or bad attributes?",
+            options: [
+              "Pre-delivery validation and monitoring on every interface.",
+              "We test key interfaces during projects but rarely monitor after go-live.",
+              "We rely on downstream teams to flag issues when they see them.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA provides the validation layer and monitoring needed to keep interfaces clean.",
+              weak: "Testing alone misses drift. CODA maintains guardrails post go-live.",
+              bad: "Relying on users is risky. CODA catches issues before they propagate.",
+            },
+          },
+          {
+            id: "ea-lead-3",
+            text: "How do you link data standards to business capability roadmaps?",
+            options: [
+              "We map standards to capabilities with clear metrics and owners.",
+              "We discuss alignment during planning but don’t track it formally.",
+              "Capabilities and data standards are handled separately.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA ties data standards to capability KPIs so roadmaps stay synchronized.",
+              weak: "Planning-only alignment fades. CODA keeps the linkage visible and measurable.",
+              bad: "Separate tracks cause rework. CODA unifies the data layer for every capability.",
+            },
+          },
+        ],
+      },
+      {
+        id: "complianceAudit",
+        name: "Compliance & Audit Lead",
+        personaName: "Naomi Briggs",
+        company: "Global Industries Group",
+        role: "Ensures master data meets regulatory, SOX, and internal audit expectations.",
+        shortDescription:
+          "Needs clear lineage, approvals, and controls evidence without slowing the business down.",
+        focusAreas: [
+          "Audit-ready approvals and history",
+          "Control effectiveness for data changes",
+          "Rapid evidence collection",
+        ],
+        redPath:
+          "Demonstrate CODA's out-of-the-box evidence pack, change history, and control monitoring to shorten audits.",
+        questions: [
+          {
+            id: "audit-lead-1",
+            text: "When auditors ask how master data changes are approved, what do you show them?",
+            options: [
+              "A system-based approval log with timestamps and roles.",
+              "Change tickets and emails compiled before fieldwork.",
+              "We walk them through the process without detailed evidence.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA provides that log with exportable evidence to satisfy SOX and internal audit.",
+              weak: "Ticket compilations are tedious. CODA centralizes history automatically.",
+              bad: "Walkthroughs invite exceptions. CODA makes proof effortless.",
+            },
+          },
+          {
+            id: "audit-lead-2",
+            text: "How do you test the effectiveness of controls on data creation and changes?",
+            options: [
+              "We run continuous monitoring and sample-based testing with clear thresholds.",
+              "We test controls annually during audit season.",
+              "We have not formalized testing for master-data controls.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA supports continuous monitoring and makes sampling easier with clean evidence.",
+              weak: "Annual tests miss drift. CODA surfaces control health all year.",
+              bad: "No testing is risky. CODA provides a starting point with minimal lift.",
+            },
+          },
+          {
+            id: "audit-lead-3",
+            text: "How quickly can you assemble evidence when a regulator or internal auditor requests it?",
+            options: [
+              "Within hours because evidence is centralized and searchable.",
+              "Within days after coordinating across teams.",
+              "It can take weeks because data is scattered.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA keeps evidence ready so requests are low-effort.",
+              weak: "Cross-team hunts are stressful. CODA reduces the coordination burden.",
+              bad: "Weeks-long hunts risk findings. CODA centralizes evidence by default.",
+            },
+          },
+        ],
+      },
+      {
+        id: "erpProgramManager",
+        name: "ERP Program Manager",
+        personaName: "Talia Monroe",
+        company: "Global Industries Group",
+        role: "Coordinates milestones, risk, and scope across ERP workstreams and vendors.",
+        shortDescription:
+          "Needs clear data-readiness checkpoints and fast remediation to keep releases on schedule.",
+        focusAreas: [
+          "Data readiness gates per release",
+          "Issue visibility and resolution speed",
+          "Vendor coordination on data dependencies",
+        ],
+        redPath:
+          "Position CODA as the data-readiness tracker that flags risks early, routes fixes, and keeps the release plan intact.",
+        questions: [
+          {
+            id: "erp-pm-1",
+            text: "What checkpoints ensure master data is ready for each release wave?",
+            options: [
+              "Defined entry/exit criteria with measurable data KPIs.",
+              "We review data quality informally during cutover calls.",
+              "We assume data is fine unless testers raise issues.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA tracks those criteria automatically and alerts when metrics slip.",
+              weak: "Informal reviews miss risk. CODA provides structured visibility for every wave.",
+              bad: "Assumptions create surprises. CODA surfaces issues before testing.",
+            },
+          },
+          {
+            id: "erp-pm-2",
+            text: "How do you coordinate data issues across SI partners, IT, and the business?",
+            options: [
+              "A single backlog with owners, SLAs, and visibility for all parties.",
+              "Status meetings and spreadsheets to track top issues.",
+              "Each team handles issues separately and escalates if needed.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA provides that shared backlog and automates routing so SLAs stay on track.",
+              weak: "Spreadsheets are brittle. CODA keeps all parties aligned in one view.",
+              bad: "Siloed handling slows fixes. CODA unifies the process and reduces escalations.",
+            },
+          },
+          {
+            id: "erp-pm-3",
+            text: "How do you report data risk to executive sponsors?",
+            options: [
+              "With trend charts on duplicates, completeness, and approvals alongside schedule milestones.",
+              "With qualitative status updates in steering decks.",
+              "We focus on schedule and budget, not data-specific risk.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA provides those charts so sponsors see risk burn-down clearly.",
+              weak: "Qualitative updates lack bite. CODA adds measurable proof of readiness.",
+              bad: "Ignoring data risk invites surprises. CODA keeps sponsors confident.",
+            },
+          },
+        ],
+      },
+      {
+        id: "assetReliability",
+        name: "VP Asset Management / Reliability",
+        personaName: "Graham Sinclair",
+        company: "Global Industries Group",
+        role: "Drives asset strategy, uptime, and lifecycle cost across the fleet.",
+        shortDescription:
+          "Needs harmonized asset and material masters so reliability models and maintenance plans are trustworthy.",
+        focusAreas: [
+          "Asset register accuracy",
+          "Reliability analytics powered by clean data",
+          "Standardized maintenance plans across sites",
+        ],
+        redPath:
+          "Link data quality to uptime and lifecycle cost, then pilot CODA on a critical asset class with measurable MTBF impact.",
+        questions: [
+          {
+            id: "asset-rel-1",
+            text: "How do you ensure asset registers and BOMs match what is installed across sites?",
+            options: [
+              "Regular reconciliations with governed change control and evidence.",
+              "Periodic spot checks when time allows.",
+              "We assume accuracy unless failures occur.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA keeps reconciliations continuous and traceable.",
+              weak: "Spot checks miss drift. CODA provides ongoing validation.",
+              bad: "Assumptions hide risk. CODA surfaces mismatches before downtime hits.",
+            },
+          },
+          {
+            id: "asset-rel-2",
+            text: "What data feeds your reliability or RCM models today?",
+            options: [
+              "Standardized failure codes, parts, and asset metadata across systems.",
+              "A mix of standardized and ad-hoc data stitched together.",
+              "Mostly historian data without consistent master-data context.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA keeps that standardization tight so models stay trustworthy.",
+              weak: "Mixed sources hurt trust. CODA normalizes the inputs for better insights.",
+              bad: "Missing context limits action. CODA adds the master-data backbone to the models.",
+            },
+          },
+          {
+            id: "asset-rel-3",
+            text: "How do you roll out standardized maintenance plans without local teams reverting?",
+            options: [
+              "We govern templates with approvals and monitor adherence.",
+              "We socialize guidance but adoption varies.",
+              "Sites set their own plans independently.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best: "CODA enforces those templates and highlights variance early.",
+              weak: "Guidance alone drifts. CODA shows adherence and supports coaching.",
+              bad: "Independent plans fragment reliability. CODA creates one governed baseline.",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "oilGas",
-    name: "Oil & Gas",
-    description: "Asset-intensive upstream and downstream operations.",
+    name: "Oil & Gas / Petrochemicals",
+    description: "Asset-intensive upstream, midstream, downstream, and petrochemical operations.",
+    painPoints: [
+      "Duplicate material masters across plants and regions.",
+      "Inconsistent equipment naming that confuses maintenance and sourcing.",
+      "Bloated MRO inventory from redundant stock and poor classification.",
+      "Fragmented SAP/Maximo data models that break reporting and analytics.",
+      "Incomplete asset registers that hide critical equipment.",
+      "Missing BOMs that slow maintenance and reliability planning.",
+      "Compliance exposure when lineage and approvals are unreliable.",
+    ],
     personas: [
       {
         id: "ceoCfo",
@@ -638,9 +1159,17 @@ const verticals = [
   },
   {
     id: "utilities",
-    name: "Utilities",
+    name: "Utilities (Electric, Gas, Water)",
     description:
-      "Regulated grid and generation operators balancing reliability with modernization.",
+      "Regulated grid, distribution, and generation operators balancing reliability with modernization across electric, gas, and water networks.",
+    painPoints: [
+      "Inaccurate network asset data undermining field operations and planning.",
+      "GIS–EAM–ERP misalignment that breaks work orders and reconciliations.",
+      "NERC/FERC audit risk from weak lineage and fragmented approvals.",
+      "Duplicate materials that create waste and confusion.",
+      "Slow maintenance due to inconsistent IDs across territories.",
+      "No unified cross-territory standards for assets, locations, or materials.",
+    ],
     personas: [
       {
         id: "utilityExec",
@@ -961,9 +1490,17 @@ const verticals = [
   },
   {
     id: "manufacturing",
-    name: "Manufacturing",
+    name: "Manufacturing (Process + Discrete)",
     description:
-      "Discrete production with multi-site plants and complex supplier networks.",
+      "Process and discrete production across multi-site plants with complex supplier networks and EAM footprints.",
+    painPoints: [
+      "Fragmented plant data across ERPs that blocks scale and visibility.",
+      "Unreliable BOMs that undermine maintenance and planning.",
+      "Missing attributes that drive quality issues and slow sourcing.",
+      "SKU duplication driving excess stock and rework in downstream systems.",
+      "S/4HANA migrations blocked by poor master-data quality.",
+      "Inconsistent supplier and part masters across plants and regions.",
+    ],
     personas: [
       {
         id: "mfgExec",
@@ -1284,9 +1821,16 @@ const verticals = [
   },
   {
     id: "healthcare",
-    name: "Healthcare & Life Sciences",
+    name: "Healthcare Systems & Hospital Networks",
     description:
-      "Hospital networks, labs, and device makers where accuracy and compliance are critical.",
+      "Hospital networks, labs, and providers where accuracy, compliance, and operational reliability are critical.",
+    painPoints: [
+      "Unreliable biomedical asset registers that create safety and maintenance risk.",
+      "Inconsistent item masters across hospitals leading to supply and billing errors.",
+      "Missing model/serial data that weakens traceability.",
+      "Duplicate suppliers or vendors that confuse procurement and compliance.",
+      "Spend leakage due to poor master-data governance across the network.",
+    ],
     personas: [
       {
         id: "hcCdo",
@@ -1607,9 +2151,16 @@ const verticals = [
   },
   {
     id: "retail",
-    name: "Retail & eCommerce",
+    name: "Retail & Logistics (SKU-heavy)",
     description:
-      "Omnichannel retail with distributed stores, DCs, and digital storefronts.",
+      "Omnichannel retail, distribution centers, and logistics networks with heavy SKU counts and channel complexity.",
+    painPoints: [
+      "Massive SKU duplication inflating carrying cost and confusing channels.",
+      "Incorrect attributes impacting pricing, fulfillment, and merchandising.",
+      "Slow supplier onboarding because requirements and validations vary.",
+      "Warehouse delays from bad item masters and inconsistent IDs.",
+      "Broken omni-channel data lineage that hurts trust in analytics.",
+    ],
     personas: [
       {
         id: "retailCoo",
@@ -1930,9 +2481,9 @@ const verticals = [
   },
   {
     id: "financialServices",
-    name: "Financial Services",
+    name: "Finance (Customer/Vendor master governance)",
     description:
-      "Banks, insurers, and fintechs balancing growth, risk, and regulatory control.",
+      "Banks, insurers, and fintechs balancing growth, risk, and regulatory control with disciplined customer and vendor masters.",
     personas: [
       {
         id: "fsCdo",
@@ -2253,6 +2804,212 @@ const verticals = [
   },
 ];
 
+const enterpriseLeadershipPersonas =
+  verticals.find((v) => v.id === "enterpriseMDM")?.personas || [];
+const oilGasPersonas = verticals.find((v) => v.id === "oilGas")?.personas || [];
+const utilitiesPersonas =
+  verticals.find((v) => v.id === "utilities")?.personas || [];
+const manufacturingPersonas =
+  verticals.find((v) => v.id === "manufacturing")?.personas || [];
+const healthcarePersonas =
+  verticals.find((v) => v.id === "healthcare")?.personas || [];
+const retailPersonas = verticals.find((v) => v.id === "retail")?.personas || [];
+const financePersonas =
+  verticals.find((v) => v.id === "financialServices")?.personas || [];
+
+const additionalIndustries = [
+  {
+    id: "chemicalsMaterials",
+    name: "Chemicals & Materials",
+    description:
+      "Process manufacturing leaders needing governed specs, batch traceability, and reliable maintenance data.",
+    painPoints: [
+      "Safety-critical equipment data inconsistencies that raise operational risk.",
+      "Hazardous material metadata misaligned across systems and sites.",
+      "Compliance documentation gaps and missing traceability.",
+      "Wrong maintenance codes that reduce reliability.",
+      "Engineering changes not reflected in masters.",
+    ],
+    personas: manufacturingPersonas,
+  },
+  {
+    id: "industrialProducts",
+    name: "Mining, Metals, Steel, Cement",
+    description:
+      "Heavy-industry and extraction operators balancing uptime, safety, and capital efficiency across rugged sites and industrial product operations.",
+    painPoints: [
+      "Unstructured heavy-equipment asset registers with incomplete lineage.",
+      "Wrong or missing BOMs for critical assets.",
+      "Inconsistent vendor part descriptions that confuse sourcing.",
+      "Outdated CMMS taxonomy that slows maintenance planning.",
+      "Poor part criticality visibility that hides risk.",
+    ],
+    personas: manufacturingPersonas,
+  },
+  {
+    id: "governmentSmartInfra",
+    name: "Government & Smart Infrastructure",
+    description:
+      "Public-sector infrastructure programs needing auditable asset data for smart-city, transit, and utility initiatives.",
+    painPoints: [
+      "Incomplete public asset registers across agencies and programs.",
+      "Legacy non-standard systems with fragmented taxonomies.",
+      "Poor GIS-ERP integration that breaks work execution and reporting.",
+      "Siloed agency data that blocks sharing and coordination.",
+      "High audit exposure due to missing lineage and weak approvals.",
+    ],
+    personas: utilitiesPersonas,
+  },
+  {
+    id: "secondaryGovernance",
+    name: "Secondary Targets (Data Governance-driven)",
+    description:
+      "Teams leading enterprise data governance who need quick wins and adoption-friendly controls across domains.",
+    personas: enterpriseLeadershipPersonas,
+  },
+  {
+    id: "telecom",
+    name: "Telecom (service and asset-intensive)",
+    description:
+      "Service providers with large network footprints that require accurate asset, vendor, and location masters.",
+    painPoints: [
+      "Fragmented network asset data across OSS/BSS platforms.",
+      "Inconsistent tower and fiber metadata reducing lifecycle visibility.",
+      "Poor lifecycle visibility for assets and services.",
+      "Duplicate vendor and service records that inflate cost and risk.",
+      "Integration issues for new builds because masters are unreliable.",
+    ],
+    personas: utilitiesPersonas,
+  },
+];
+
+verticals.push(...additionalIndustries);
+
+const marketTypes = [
+  {
+    id: "oneTimeProjects",
+    name: "One-Time Projects",
+    description:
+      "Master data cleansing, standardization, deduplication, classification & taxonomy setup, governance framework design, MDM platform configuration.",
+  },
+  {
+    id: "recurringServices",
+    name: "Recurring / Repeat Services",
+    description:
+      "Ongoing governance, data stewardship, continuous enrichment, quality monitoring, rule-based validations, periodic data audits, MDM-as-a-Service.",
+  },
+  {
+    id: "hybrid",
+    name: "Hybrid (Most Enterprises)",
+    description:
+      "Initial MDM foundation paired with continuous governance operations to sustain quality and adoption.",
+  },
+];
+
+const marketTypeSummary = marketTypes.map((type) => type.name).join(" · ");
+
+const problemsWeSolve = [
+  {
+    problem: "Duplicate, inconsistent, low-quality material and asset masters",
+    opportunity: "Deliver a unified, standardized master data foundation across all plants/sites",
+  },
+  {
+    problem: "Poor visibility of assets, equipment, and spares across operations",
+    opportunity:
+      "Enable a single source of truth for asset/material data, improving availability and planning",
+  },
+  {
+    problem: "ERP/EAM inefficiencies due to bad master data (SAP, Oracle, Maximo)",
+    opportunity:
+      "Enhance ERP/EAM performance through cleansed, structured, and governed master records",
+  },
+  {
+    problem: "Excessive inventory and emergency purchases",
+    opportunity: "Reduce cost leakage through accurate material masters and harmonized procurement data",
+  },
+  {
+    problem: "Lack of centralized governance and data standards",
+    opportunity: "Implement enterprise-wide governance, taxonomy, workflows, and approval mechanisms",
+  },
+  {
+    problem: "Compliance risk from incomplete or inaccurate equipment data",
+    opportunity: "Strengthen audit readiness with complete, validated, lineage-tracked master data",
+  },
+  {
+    problem: "Fragmented systems and inconsistent data models across plants",
+    opportunity:
+      "Harmonize data across multi-ERP, multi-site environments with consistent business rules",
+  },
+  {
+    problem: "Engineering changes not reflected in the master",
+    opportunity:
+      "Synchronize engineering, maintenance, and asset data through controlled, governed updates",
+  },
+  {
+    problem: "Digital transformation failures due to poor data foundations",
+    opportunity:
+      "Unlock readiness for S/4HANA, IoT, predictive maintenance, and analytics initiatives",
+  },
+  {
+    problem: "High manual data maintenance effort and slow processes",
+    opportunity:
+      "Automate data validation, enrichment, and stewardship workflows to increase efficiency",
+  },
+];
+
+const solutionsBeingSought = [
+  {
+    solution: "A single, standardized master data foundation",
+    opportunity:
+      "CODA can design and implement unified asset/material master standards across all business units and sites",
+  },
+  {
+    solution: "Automated data quality, validation & duplicate detection",
+    opportunity:
+      "The CODA platform delivers rule-based validation, auto-classification, and detection of incorrect/duplicate records",
+  },
+  {
+    solution: "Centralized governance workflows & ownership models",
+    opportunity:
+      "CODA provides structured workflows, stewardship controls, approval chains, and complete audit trails",
+  },
+  {
+    solution: "Harmonization across SAP, Oracle, Maximo & legacy systems",
+    opportunity:
+      "CODA’s integration capabilities align all ERP/EAM systems into one governed MDM layer",
+  },
+  {
+    solution: "Large-scale cleansing and standardization initiatives",
+    opportunity:
+      "CODA offers enterprise-grade cleansing, enrichment, and taxonomy design services to rebuild accurate masters",
+  },
+  {
+    solution: "AI/ML-powered enrichment & classification",
+    opportunity:
+      "CODA’s AI-driven taxonomy mapping and attribute enrichment eliminate manual data preparation work",
+  },
+  {
+    solution: "Full visibility of asset/equipment/material hierarchies",
+    opportunity:
+      "CODA enables consistent hierarchies, BOM integrity, and equipment–spare linkage for maintenance reliability",
+  },
+  {
+    solution: "MDM-as-a-Service (ongoing operations)",
+    opportunity:
+      "CODA can operate continuous stewardship, validations, updates, and periodic audits as a recurring managed service",
+  },
+  {
+    solution: "Compliance-ready master data",
+    opportunity:
+      "CODA ensures validated, complete, traceable master records to support regulatory audits",
+  },
+  {
+    solution: "Integration-ready MDM platforms (API-first)",
+    opportunity:
+      "CODA delivers real-time, governed master data sync across ERP/EAM/PLM/GIS environments",
+  },
+];
+
 const industryListEl = document.getElementById("industryList");
 const personaListEl = document.getElementById("personaList");
 const industryDetailsEl = document.getElementById("industryDetails");
@@ -2290,6 +3047,7 @@ let currentPersona = null;
 let currentQuestionIndex = 0;
 let totalQuestions = 0;
 let displayedQuestionText = "";
+let lastAnswerText = "";
 
 function getPersonaIdentity(persona) {
   if (!persona) return "";
@@ -2375,6 +3133,7 @@ function renderContextBadges() {
     }</span>
     <span class="badge"><strong>Focus</strong> ${focusSummary}</span>
     <span class="badge"><strong>Red-path</strong> ${redPathSummary}</span>
+    <span class="badge"><strong>Market motions</strong> ${marketTypeSummary}</span>
   `;
 }
 
@@ -2417,9 +3176,19 @@ function renderIndustryDetails() {
     return;
   }
 
+  const painPoints = currentIndustry.painPoints || [];
+  const painPointsHtml = painPoints
+    .map((point) => `<li>${point}</li>`)
+    .join("");
+
   industryDetailsEl.innerHTML = `
     <h3>${currentIndustry.name}</h3>
     <p>${currentIndustry.description}</p>
+    ${
+      painPointsHtml
+        ? `<div class="pain-points"><p class="eyebrow">Core Pain Points</p><ul class="pain-point-list">${painPointsHtml}</ul></div>`
+        : ""
+    }
   `;
 }
 
@@ -2454,6 +3223,7 @@ function selectPersona(personaId) {
     currentIndustry.personas.find((p) => p.id === personaId) || null;
   currentQuestionIndex = 0;
   totalQuestions = currentPersona ? currentPersona.questions.length : 0;
+  lastAnswerText = "";
   updateActiveButtons(personaListEl, personaId);
   renderPersonaDetails();
   renderRedPathCard();
@@ -2486,6 +3256,10 @@ function renderPersonaDetails() {
     ? `<div class="focus-areas"><p><strong>Focus the roleplay on:</strong></p><ul>${focusList}</ul></div>`
     : "<p><strong>Focus the roleplay on:</strong> reliable data, cash discipline, and confident decisions.</p>";
 
+  const marketTypeBlock = buildMarketTypeBlock();
+  const problemOpportunityBlock = buildProblemOpportunityBlock();
+  const solutionsSoughtBlock = buildSolutionsSoughtBlock();
+
   personaDetailsEl.innerHTML = `
     <div class="persona-header">
       <div>
@@ -2497,6 +3271,76 @@ function renderPersonaDetails() {
     </div>
     <p>${currentPersona.shortDescription}</p>
     ${focusBlock}
+    ${marketTypeBlock}
+    <div class="storyline-grid">
+      ${problemOpportunityBlock}
+      ${solutionsSoughtBlock}
+    </div>
+  `;
+}
+
+function buildMarketTypeBlock() {
+  if (!marketTypes.length) return "";
+
+  const listItems = marketTypes
+    .map(
+      (type) =>
+        `<li><strong>${type.name}:</strong> ${ensureSentence(type.description)}</li>`,
+    )
+    .join("");
+
+  return `
+    <div class="market-type-block">
+      <p><strong>Market motions to weave into the storyline:</strong></p>
+      <ul>${listItems}</ul>
+      <p class="market-type-note">Link discovery to whether they need one-time cleanup, recurring stewardship, or a hybrid track.</p>
+    </div>
+  `;
+}
+
+function buildProblemOpportunityBlock() {
+  if (!problemsWeSolve.length) return "";
+
+  const items = problemsWeSolve
+    .map(
+      (entry) => `
+        <li>
+          <p class="list-label">${entry.problem}</p>
+          <p class="list-subtext">Opportunity for CODA: ${ensureSentence(entry.opportunity)}</p>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="storyline-card">
+      <p class="eyebrow">Likely problems we are addressing</p>
+      <h3>Anchor CODA to the pain</h3>
+      <ul class="paired-list">${items}</ul>
+    </div>
+  `;
+}
+
+function buildSolutionsSoughtBlock() {
+  if (!solutionsBeingSought.length) return "";
+
+  const items = solutionsBeingSought
+    .map(
+      (entry) => `
+        <li>
+          <p class="list-label">${entry.solution}</p>
+          <p class="list-subtext">How this creates opportunity: ${ensureSentence(entry.opportunity)}</p>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="storyline-card">
+      <p class="eyebrow">Solutions being sought</p>
+      <h3>Show how CODA fits</h3>
+      <ul class="paired-list">${items}</ul>
+    </div>
   `;
 }
 
@@ -2526,6 +3370,7 @@ function renderRedPathCard() {
         <li>Spell out the benefits they care about: ${focusSummary}.</li>
         <li>Keep the dialogue moving toward a quick CODA proof or pilot.</li>
       </ol>
+      <p class="market-type-note"><strong>Market motions:</strong> Adapt the storyline to ${marketTypeSummary.toLowerCase()} so you anchor CODA to their project, recurring ops, or hybrid path.</p>
       <p><strong>Stay clear:</strong> Use simple language and connect every answer to how CODA helps this persona win.</p>
     </div>
   `;
@@ -2536,6 +3381,7 @@ function startRoleplay() {
   currentQuestionIndex = 0;
   totalQuestions = currentPersona.questions.length;
   displayedQuestionText = "";
+  lastAnswerText = "";
   const personaIdentity = getPersonaIdentity(currentPersona);
   const personaPosition = getPersonaPosition(currentPersona);
   scenarioTitleEl.textContent = `Roleplay with ${personaIdentity}`;
@@ -2553,6 +3399,7 @@ function resetConversation() {
   currentPromptEl.innerHTML = "<strong>Question:</strong> —";
   answerOptionsEl.innerHTML = "";
   displayedQuestionText = "";
+  lastAnswerText = "";
   feedbackContentEl.innerHTML = coachingIntroHtml;
   restartButton.disabled = true;
   refreshProgress(0, 0);
@@ -2566,10 +3413,15 @@ function renderCurrentQuestion() {
     return;
   }
 
-  displayedQuestionText = formatOpeningQuestion(
-    question.text,
-    currentQuestionIndex === 0,
-  );
+  displayedQuestionText =
+    currentQuestionIndex === 0
+      ? formatOpeningQuestion(question.text, true)
+      : formatFollowUpQuestion(
+          question.text,
+          lastAnswerText,
+          currentQuestionIndex,
+          totalQuestions,
+        );
   currentPromptEl.innerHTML = `<strong>Question:</strong> ${displayedQuestionText}`;
   answerOptionsEl.innerHTML = "";
 
@@ -2589,6 +3441,7 @@ function handleAnswer(question, selectedIndex) {
     question.options[selectedIndex],
     evaluation.quality,
   );
+  lastAnswerText = question.options[selectedIndex];
   updateFeedback(
     evaluation.feedbackMessage,
     evaluation.quality,
@@ -2741,6 +3594,31 @@ function formatOpeningQuestion(questionText, isFirstQuestion) {
   const dramaticHook = `Recently, a ${personaLabel} peer in ${industryName} unlocked $10M by eliminating 10% duplicate stock tied to ${focusPunch}.`;
 
   return ensureQuestion(`${dramaticHook} ${baseQuestion}`);
+}
+
+function formatFollowUpQuestion(
+  questionText,
+  priorAnswer,
+  stepIndex,
+  totalSteps,
+) {
+  const baseQuestion = ensureQuestion(
+    typeof questionText === "string" ? questionText.trim() : "",
+  ).replace(/[?]+$/, "");
+
+  const referenceAnswer =
+    typeof priorAnswer === "string" && priorAnswer.trim().length > 0
+      ? priorAnswer.trim()
+      : "your last point";
+
+  const closingCue =
+    stepIndex === totalSteps - 1
+      ? "to confirm PoC readiness"
+      : "to focus the next step";
+
+  const followUp = `Building on ${referenceAnswer}, which of these best describes ${baseQuestion.toLowerCase()} ${closingCue}`;
+
+  return ensureQuestion(followUp).replace("??", "?");
 }
 
 function ensureSentence(text) {
